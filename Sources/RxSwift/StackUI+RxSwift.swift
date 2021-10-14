@@ -8,7 +8,9 @@
 import UIKit
 import RxSwift
 import RxCocoa
+#if !COCOAPODS
 import StackUI
+#endif
 
 //The code below from NSObject+Rx
 fileprivate var disposeBagContext: UInt8 = 0
