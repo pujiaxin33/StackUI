@@ -28,7 +28,6 @@
 		EAB9DE0A271804E1009DAE51 /* ActivityIndicatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAB9DDF4271804E1009DAE51 /* ActivityIndicatorView.swift */; };
 		EAB9DE0B271804E1009DAE51 /* Button.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAB9DDF5271804E1009DAE51 /* Button.swift */; };
 		EAB9DE0C271804E1009DAE51 /* Layer.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAB9DDF6271804E1009DAE51 /* Layer.swift */; };
-		EAB9DE0D271804E1009DAE51 /* StackUI+RxSwift.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAB9DDF8271804E1009DAE51 /* StackUI+RxSwift.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -230,7 +229,6 @@
 				EAB9DE06271804E1009DAE51 /* Slider.swift in Sources */,
 				EAB9DE00271804E1009DAE51 /* PageControl.swift in Sources */,
 				EAB9DDFF271804E1009DAE51 /* Spacer.swift in Sources */,
-				EAB9DE0D271804E1009DAE51 /* StackUI+RxSwift.swift in Sources */,
 				EAB9DDFC271804E1009DAE51 /* Control.swift in Sources */,
 				EAB9DDF9271804E1009DAE51 /* Label.swift in Sources */,
 				EAB9DE08271804E1009DAE51 /* Stepper.swift in Sources */,
