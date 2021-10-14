@@ -1,0 +1,6 @@
+module StackUI {
+  umbrella header "StackUI-umbrella.h"
+
+  export *
+  module * { export * }
+}

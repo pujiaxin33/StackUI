@@ -1,0 +1,6 @@
+module Pods_StackUIExample {
+  umbrella header "Pods-StackUIExample-umbrella.h"
+
+  export *
+  module * { export * }
+}

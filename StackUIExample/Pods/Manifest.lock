@@ -1,0 +1,38 @@
+PODS:
+  - RxCocoa (6.2.0):
+    - RxRelay (= 6.2.0)
+    - RxSwift (= 6.2.0)
+  - RxRelay (6.2.0):
+    - RxSwift (= 6.2.0)
+  - RxSwift (6.2.0)
+  - StackUI (0.0.1):
+    - StackUI/Core (= 0.0.1)
+  - StackUI/Core (0.0.1)
+  - StackUI/RxSwift (0.0.1):
+    - RxCocoa
+    - RxSwift
+    - StackUI/Core
+
+DEPENDENCIES:
+  - StackUI (from `../../StackUI`)
+  - StackUI/RxSwift (from `../../StackUI`)
+
+SPEC REPOS:
+  trunk:
+    - RxCocoa
+    - RxRelay
+    - RxSwift
+
+EXTERNAL SOURCES:
+  StackUI:
+    :path: "../../StackUI"
+
+SPEC CHECKSUMS:
+  RxCocoa: 4baf94bb35f2c0ab31bc0cb9f1900155f646ba42
+  RxRelay: e72dbfd157807478401ef1982e1c61c945c94b2f
+  RxSwift: d356ab7bee873611322f134c5f9ef379fa183d8f
+  StackUI: 3a8679f14834156fcfc2fc394dd41853d1aa84b4
+
+PODFILE CHECKSUM: 621ed15fc1f3996729b9a1bd60bed8fd99dc3785
+
+COCOAPODS: 1.10.2
