@@ -7,10 +7,10 @@
 
 import UIKit
 
-/// 你可以把Divider理解为有固定宽度或高度的UIView，它会受到UIStackView的调整，所以，它的适用条件如下：
-/// 1、HStack且宽度没有限制
-/// 2、Vstack且高度没有限制
-/// 否则Divider被UIStackView调整
+/// You can understand Divider as a UIView with a fixed width or height, which will be adjusted by UIStackView, so its applicable conditions are as follows:
+/// 1, HStack and there is no limit to the width
+/// 2. Vstack and no height limit
+/// Otherwise Divider is adjusted by UIStackView
 open class Divider: UIView, StackUIView {
     public let weight: CGFloat
     var axis: NSLayoutConstraint.Axis? {

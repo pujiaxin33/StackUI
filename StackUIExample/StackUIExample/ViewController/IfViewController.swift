@@ -29,9 +29,9 @@ class IfViewController: UIViewController {
             stack = nil
         }
         stack = HStack(distribution: .equalCentering, alignment: .center) {
-            HStack(alignment: .center, spacing: 5) { [weak self] in
+            HStack(alignment: .center, spacing: 5) {
                 ImageView().image(UIImage(named: "avatar")).size(width: 40, height: 40)
-                if self?.isShowInfo == true {
+                if self.isShowInfo == true {
                     VStack {
                         Label("用户昵称").font(.systemFont(ofSize: 18, weight: .medium))
                         Label().text("用户很懒，什么都没有留下来！").font(.systemFont(ofSize: 12)).textColor(.gray)

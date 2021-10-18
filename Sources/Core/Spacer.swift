@@ -7,10 +7,10 @@
 
 import UIKit
 
-/// 你可以把Spacer理解为有固定宽度或高度的UIView，它会受到UIStackView的调整，所以，它的适用条件如下：
-/// 1、HStack且宽度没有限制
-/// 2、Vstack且高度没有限制
-/// 否则Spacer被UIStackView调整
+/// You can understand Spacer as a UIView with a fixed width or height, which will be adjusted by UIStackView. Therefore, its applicable conditions are as follows:
+/// 1, HStack and there is no limit to the width
+/// 2. Vstack and no height limit
+/// Otherwise Spacer is adjusted by UIStackView
 open class Spacer: UIView {
     public let spacing: CGFloat
     var axis: NSLayoutConstraint.Axis? {

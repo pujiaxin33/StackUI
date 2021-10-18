@@ -108,7 +108,7 @@ open class VStack: UIStackView, StackUIView {
     }
 }
 
-/// `HScrollStack`的宽度和高度必须要明确
+/// The width and height of `HScrollStack` is required
 open class HScrollStack: UIView, StackUIView {
     private let stackView: UIStackView
     private let scrollView: UIScrollView
@@ -150,7 +150,7 @@ open class HScrollStack: UIView, StackUIView {
     }
 }
 
-/// `VScrollStack`的宽度和高度必须要明确
+/// The width and height of `VScrollStack` is required
 open class VScrollStack: UIView, StackUIView {
     private let stackView: UIStackView
     private let scrollView: UIScrollView

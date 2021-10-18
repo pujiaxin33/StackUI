@@ -107,5 +107,5 @@ public extension StackUITextView {
     }
 }
 
-/// `TextView`的宽度和高度必须要明确
+/// The width and height of `TextView` is required
 open class TextView: UITextView, StackUITextView {}

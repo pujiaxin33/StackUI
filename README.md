@@ -42,7 +42,7 @@ Execute `pod repo update` first, then execute `pod install`
 
 - File> Swift Packages> Add Package Dependency
 - Add https://github.com/pujiaxin33/StackUI.git
-- Select "Up to Next Major" with "0.0.2"
+- Select "Up to Next Major" with "0.0.3"
 - If you want to use `RxSwift` feature, select `StackUISwithRxSwift` Product
 
 # Example 
@@ -158,6 +158,25 @@ class CustomLabel: Label {
         return self
     }
 }
+```
+
+## If Statement
+```Swift
+     var isShowInfo: Bool = false
+     HStack(distribution: .equalCentering, alignment: .center) {
+         HStack(alignment: .center, spacing: 5) {
+             ImageView().image(UIImage(named: "avatar")).size(width: 40, height: 40)
+             if self.isShowInfo == true {
+                 VStack {
+                     Label("User nickname").font(.systemFont(ofSize: 18, weight: .medium))
+                     Label().text("The user is lazy, nothing left!").font(.systemFont(ofSize: 12)).textColor(.gray)
+                 }
+             }else {
+                 Label("No Information")
+             }
+         }
+         ImageView().image(UIImage(named: "arrow_right"))
+     }
 ```
 
 ### The parent class cannot be modified, conform the protocol

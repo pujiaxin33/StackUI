@@ -40,7 +40,7 @@ end
 
 - File > Swift Packages > Add Package Dependency
 - Add https://github.com/pujiaxin33/StackUI.git
-- Select "Up to Next Major" with "0.0.2"
+- Select "Up to Next Major" with "0.0.3"
 - 如果你想使用`RxSwift`特性，选择`StackUISwithRxSwift` Product
 
 # 使用示例
@@ -131,6 +131,26 @@ end
     //更新
     nickName.onNext("周杰伦")
     desc.onNext("哎哟，不错哟❤️")
+```
+
+## If语句
+```Swift
+    var isShowInfo: Bool = false
+    
+    HStack(distribution: .equalCentering, alignment: .center) {
+        HStack(alignment: .center, spacing: 5) {
+            ImageView().image(UIImage(named: "avatar")).size(width: 40, height: 40)
+            if self.isShowInfo == true {
+                VStack {
+                    Label("用户昵称").font(.systemFont(ofSize: 18, weight: .medium))
+                    Label().text("用户很懒，什么都没有留下来！").font(.systemFont(ofSize: 12)).textColor(.gray)
+                }
+            }else {
+                Label("没有信息")
+            }
+        }
+        ImageView().image(UIImage(named: "arrow_right"))
+    }
 ```
 
 ## 自定义View支持`StackUI`
