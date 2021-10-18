@@ -12,17 +12,17 @@ If you are tired of configuring the constraints of UIKit, then `StackUI` will be
 
 # Features
 
--[x] Declarative syntax similar to `SwiftUI`;
--[x] Data-driven UI, update data then UI automatically updates;
--[x] Support `HScrollStack`, `VScrollStack`, when the content exceeds the width or height of the stack, scrolling is automatically turned on;
--[x] Chained syntax configuration UIKit;
--[x] Can flexibly extend custom classes to support `StackUI`;
+- [x] Declarative syntax similar to `SwiftUI`;
+- [x] Data-driven UI, update data then UI automatically updates;
+- [x] Support `HScrollStack`, `VScrollStack`, when the content exceeds the width or height of the stack, scrolling is automatically turned on;
+- [x] Chained syntax configuration UIKit;
+- [x] Can flexibly extend custom classes to support `StackUI`;
 
 # Require
 
--iOS 9.0+
--XCode 13.0+
--Swift 5.0+
+- iOS 9.0+
+- XCode 13.0+
+- Swift 5.0+
 
 # Install
 
@@ -40,10 +40,10 @@ Execute `pod repo update` first, then execute `pod install`
 
 ## SPM
 
--File> Swift Packages> Add Package Dependency
--Add https://github.com/pujiaxin33/StackUI.git
--Select "Up to Next Major" with "0.0.2"
--If you want to use `RxSwift` feature, select `StackUISwithRxSwift` Product
+- File> Swift Packages> Add Package Dependency
+- Add https://github.com/pujiaxin33/StackUI.git
+- Select "Up to Next Major" with "0.0.2"
+- If you want to use `RxSwift` feature, select `StackUISwithRxSwift` Product
 
 # Example 
 
