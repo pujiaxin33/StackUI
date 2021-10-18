@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		1E75FF6F8389D3D8BA9B71D6 /* libPods-StackUIExample.a in Frameworks */ = {isa = PBXBuildFile; fileRef = DC945D732FFC7D0646776FCE /* libPods-StackUIExample.a */; };
+		EA2059A7271D111600579D01 /* CustomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA2059A6271D111600579D01 /* CustomView.swift */; };
+		EA2059A9271D11E300579D01 /* CustomViewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA2059A8271D11E300579D01 /* CustomViewViewController.swift */; };
+		EA2059AB271D124900579D01 /* CustomLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA2059AA271D124900579D01 /* CustomLabel.swift */; };
 		EAB9DE1B2718063D009DAE51 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAB9DE1A2718063D009DAE51 /* AppDelegate.swift */; };
 		EAB9DE1F2718063D009DAE51 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAB9DE1E2718063D009DAE51 /* ViewController.swift */; };
 		EAB9DE222718063D009DAE51 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EAB9DE202718063D009DAE51 /* Main.storyboard */; };
@@ -27,6 +30,9 @@
 		4C576E0C2B0D19A5417A85E4 /* Pods-StackUIExample.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StackUIExample.debug.xcconfig"; path = "Target Support Files/Pods-StackUIExample/Pods-StackUIExample.debug.xcconfig"; sourceTree = "<group>"; };
 		B790A055610F52DD1645BB26 /* Pods-StackUIExample.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StackUIExample.release.xcconfig"; path = "Target Support Files/Pods-StackUIExample/Pods-StackUIExample.release.xcconfig"; sourceTree = "<group>"; };
 		DC945D732FFC7D0646776FCE /* libPods-StackUIExample.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-StackUIExample.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		EA2059A6271D111600579D01 /* CustomView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomView.swift; sourceTree = "<group>"; };
+		EA2059A8271D11E300579D01 /* CustomViewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomViewViewController.swift; sourceTree = "<group>"; };
+		EA2059AA271D124900579D01 /* CustomLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomLabel.swift; sourceTree = "<group>"; };
 		EAB9DE172718063D009DAE51 /* StackUIExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = StackUIExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EAB9DE1A2718063D009DAE51 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		EAB9DE1E2718063D009DAE51 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -73,6 +79,15 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
+		EA2059A5271D110400579D01 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				EA2059A6271D111600579D01 /* CustomView.swift */,
+				EA2059AA271D124900579D01 /* CustomLabel.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		EAB9DE0E2718063D009DAE51 = {
 			isa = PBXGroup;
 			children = (
@@ -94,6 +109,7 @@
 		EAB9DE192718063D009DAE51 /* StackUIExample */ = {
 			isa = PBXGroup;
 			children = (
+				EA2059A5271D110400579D01 /* View */,
 				EAB9DE3427181421009DAE51 /* Model */,
 				EAB9DE31271813A9009DAE51 /* ViewController */,
 				EAB9DE2E27180B95009DAE51 /* Cell */,
@@ -124,6 +140,7 @@
 				EAB9DE3D2718203E009DAE51 /* HScrollStackViewController.swift */,
 				EAB9DE39271819B6009DAE51 /* TextPublisherViewController.swift */,
 				EAB9DE3B27181E1C009DAE51 /* TextDriverViewController.swift */,
+				EA2059A8271D11E300579D01 /* CustomViewViewController.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -239,7 +256,10 @@
 				EAB9DE3E2718203E009DAE51 /* HScrollStackViewController.swift in Sources */,
 				EAB9DE33271813F1009DAE51 /* ForEachViewController.swift in Sources */,
 				EAB9DE1B2718063D009DAE51 /* AppDelegate.swift in Sources */,
+				EA2059A9271D11E300579D01 /* CustomViewViewController.swift in Sources */,
+				EA2059A7271D111600579D01 /* CustomView.swift in Sources */,
 				EAB9DE3A271819B6009DAE51 /* TextPublisherViewController.swift in Sources */,
+				EA2059AB271D124900579D01 /* CustomLabel.swift in Sources */,
 				EAB9DE40271824A7009DAE51 /* FoodCell.swift in Sources */,
 				EAB9DE3627181437009DAE51 /* UserModel.swift in Sources */,
 				EAB9DE3027180BCE009DAE51 /* SettingsCell.swift in Sources */,
