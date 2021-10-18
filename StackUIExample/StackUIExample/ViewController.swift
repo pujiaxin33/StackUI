@@ -30,7 +30,7 @@ class ViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 8
+        return 9
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -60,6 +60,10 @@ class ViewController: UITableViewController {
             cell.textLabel?.text = "CustomView"
             return cell
         case 6:
+            let cell = tableView.dequeueReusableCell(withIdentifier: "UITableViewCell", for: indexPath)
+            cell.textLabel?.text = "If Statements"
+            return cell
+        case 7:
             let cell = tableView.dequeueReusableCell(withIdentifier: "FoodCell", for: indexPath) as! FoodCell
             cell.addCallBack = {[weak self] in
                 let alert = UIAlertController(title: "温馨提示", message: "已经加入购物车", preferredStyle: .alert)
@@ -93,6 +97,9 @@ class ViewController: UITableViewController {
             navigationController?.pushViewController(vc, animated: true)
         case 5:
             let vc = CustomViewViewController()
+            navigationController?.pushViewController(vc, animated: true)
+        case 6:
+            let vc = IfViewController()
             navigationController?.pushViewController(vc, animated: true)
         default:
             break
