@@ -41,6 +41,25 @@ public protocol StackUITextField: UITextField, StackUIControl {
     func inputView(_ inputView: UIView?) -> Self
     func inputAccessoryView(_ inputAccessoryView: UIView?) -> Self
     func clearsOnInsertion(_ clearsOnInsertion: Bool) -> Self
+    
+    func autocapitalizationType(_ autocapitalizationType: UITextAutocapitalizationType) -> Self
+    func autocorrectionType(_ autocorrectionType: UITextAutocorrectionType) -> Self
+    func spellCheckingType(_ spellCheckingType: UITextSpellCheckingType) -> Self
+    @available(iOS 11.0, *)
+    func smartQuotesType(_ smartQuotesType: UITextSmartQuotesType) -> Self
+    @available(iOS 11.0, *)
+    func smartDashesType(_ smartDashesType: UITextSmartDashesType) -> Self
+    @available(iOS 11.0, *)
+    func smartInsertDeleteType(_ smartInsertDeleteType: UITextSmartInsertDeleteType) -> Self
+    func keyboardType(_ keyboardType: UIKeyboardType) -> Self
+    func keyboardAppearance(_ keyboardAppearance: UIKeyboardAppearance) -> Self
+    func returnKeyType(_ returnKeyType: UIReturnKeyType) -> Self
+    func enablesReturnKeyAutomatically(_ enablesReturnKeyAutomatically: Bool) -> Self
+    func isSecureTextEntry(_ isSecureTextEntry: Bool) -> Self
+    @available(iOS 10.0, *)
+    func textContentType(_ textContentType: UITextContentType!) -> Self
+    @available(iOS 12.0, *)
+    func passwordRules(_ passwordRules: UITextInputPasswordRules?) -> Self
 }
 
 public extension StackUITextField {
@@ -190,6 +209,64 @@ public extension StackUITextField {
     }
     func clearsOnInsertion(_ clearsOnInsertion: Bool) -> Self {
         self.clearsOnInsertion = clearsOnInsertion
+        return self
+    }
+    
+    func autocapitalizationType(_ autocapitalizationType: UITextAutocapitalizationType) -> Self {
+        self.autocapitalizationType = autocapitalizationType
+        return self
+    }
+    func autocorrectionType(_ autocorrectionType: UITextAutocorrectionType) -> Self {
+        self.autocorrectionType = autocorrectionType
+        return self
+    }
+    func spellCheckingType(_ spellCheckingType: UITextSpellCheckingType) -> Self {
+        self.spellCheckingType = spellCheckingType
+        return self
+    }
+    @available(iOS 11.0, *)
+    func smartQuotesType(_ smartQuotesType: UITextSmartQuotesType) -> Self {
+        self.smartQuotesType = smartQuotesType
+        return self
+    }
+    @available(iOS 11.0, *)
+    func smartDashesType(_ smartDashesType: UITextSmartDashesType) -> Self {
+        self.smartDashesType = smartDashesType
+        return self
+    }
+    @available(iOS 11.0, *)
+    func smartInsertDeleteType(_ smartInsertDeleteType: UITextSmartInsertDeleteType) -> Self {
+        self.smartInsertDeleteType = smartInsertDeleteType
+        return self
+    }
+    func keyboardType(_ keyboardType: UIKeyboardType) -> Self {
+        self.keyboardType = keyboardType
+        return self
+    }
+    func keyboardAppearance(_ keyboardAppearance: UIKeyboardAppearance) -> Self {
+        self.keyboardAppearance = keyboardAppearance
+        return self
+    }
+    func returnKeyType(_ returnKeyType: UIReturnKeyType) -> Self {
+        self.returnKeyType = returnKeyType
+        return self
+    }
+    func enablesReturnKeyAutomatically(_ enablesReturnKeyAutomatically: Bool) -> Self {
+        self.enablesReturnKeyAutomatically = enablesReturnKeyAutomatically
+        return self
+    }
+    func isSecureTextEntry(_ isSecureTextEntry: Bool) -> Self {
+        self.isSecureTextEntry = isSecureTextEntry
+        return self
+    }
+    @available(iOS 10.0, *)
+    func textContentType(_ textContentType: UITextContentType!) -> Self {
+        self.textContentType = textContentType
+        return self
+    }
+    @available(iOS 12.0, *)
+    func passwordRules(_ passwordRules: UITextInputPasswordRules?) -> Self {
+        self.passwordRules = passwordRules
         return self
     }
 }
