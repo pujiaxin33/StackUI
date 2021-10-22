@@ -152,4 +152,9 @@ public extension StackUICollectionView {
     }
 }
 
-open class CollectionView: UICollectionView, StackUICollectionView {}
+open class CollectionView: UICollectionView, StackUICollectionView {
+    public func apply(_ closure: (Self) -> ()) -> Self {
+        closure(self)
+        return self
+    }
+}

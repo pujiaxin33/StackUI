@@ -75,4 +75,9 @@ public extension StackUIStepper {
     }
 }
 
-open class Stepper: UIStepper, StackUIStepper {}
+open class Stepper: UIStepper, StackUIStepper {
+    public func apply(_ closure: (Self) -> ()) -> Self {
+        closure(self)
+        return self
+    }
+}

@@ -202,6 +202,18 @@ class CustomLabelFromProtocol: UILabel, StackUILabel {
 }
 ```
 
+## Attribute configuration not supported by chain syntax yet
+
+Unified configuration through apply closure
+```
+HStack(alignment: .center, spacing: 5) {
+     Label().text(model.desc).apply {label in
+         //If there are attributes that are not defined by the chain syntax, they can be configured in the apply closure, or they can be submitted to Issue for support.
+         label.font = UIFont.systemFont(ofSize: 10)
+         label.textColor = .gray
+     }
+}
+```
 
 # Currently supported classes
 - `Layer`:The relevant properties of `Layer` are configured in the `View` class

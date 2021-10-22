@@ -163,4 +163,9 @@ open class Label: UILabel, StackUILabel {
     public required init?(coder: NSCoder) {
         super.init(coder: coder)
     }
+    
+    public func apply(_ closure: (Self) -> ()) -> Self {
+        closure(self)
+        return self
+    }
 }

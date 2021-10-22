@@ -271,4 +271,9 @@ public extension StackUITextField {
     }
 }
 
-open class TextField: UITextField, StackUITextField {}
+open class TextField: UITextField, StackUITextField {
+    public func apply(_ closure: (Self) -> ()) -> Self {
+        closure(self)
+        return self
+    }
+}

@@ -30,7 +30,11 @@ class ForEachViewController: UIViewController {
                         ImageView().image(UIImage(named: model.avatar)).size(width: 40, height: 40)
                         VStack {
                             Label(model.name).font(.systemFont(ofSize: 18, weight: .medium))
-                            Label().text(model.desc).font(.systemFont(ofSize: 12)).textColor(.gray)
+                            Label().text(model.desc).apply { label in
+                                //如果有链式语法没有定义的属性，可以在apply闭包里面统一配置，也可以提交Issue进行支持。
+                                label.font = UIFont.systemFont(ofSize: 12)
+                                label.textColor = .gray
+                            }
                         }
                     }
                     Divider()

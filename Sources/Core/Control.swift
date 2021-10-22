@@ -43,4 +43,9 @@ public extension StackUIControl {
     }
 }
 
-open class Control: UIControl, StackUIControl {}
+open class Control: UIControl, StackUIControl {
+    public func apply(_ closure: (Self) -> ()) -> Self {
+        closure(self)
+        return self
+    }
+}

@@ -158,4 +158,9 @@ public extension StackUIView {
     }
 }
 
-open class View: UIView, StackUIView {}
+open class View: UIView, StackUIView {
+    public func apply(_ closure: (Self) -> ()) -> Self {
+        closure(self)
+        return self
+    }
+}

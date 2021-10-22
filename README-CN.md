@@ -201,6 +201,18 @@ class CustomLabelFromProtocol: UILabel, StackUILabel {
 }
 ```
 
+## 链式语法暂未支持的属性配置
+
+通过apply闭包统一配置
+```
+HStack(alignment: .center, spacing: 5) {
+    Label().text(model.desc).apply { label in
+        //如果有链式语法没有定义的属性，可以在apply闭包里面统一配置，也可以提交Issue进行支持。
+        label.font = UIFont.systemFont(ofSize: 10)
+        label.textColor = .gray
+    }
+}
+```
 
 # 目前支持的类
 - `Layer`的相关属性配置在`View`类

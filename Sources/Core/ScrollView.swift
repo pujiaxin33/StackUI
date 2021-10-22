@@ -168,4 +168,9 @@ public extension StackUIScrollView {
     }
 }
 
-open class ScrollView: UIScrollView, StackUIScrollView {}
+open class ScrollView: UIScrollView, StackUIScrollView {
+    public func apply(_ closure: (Self) -> ()) -> Self {
+        closure(self)
+        return self
+    }
+}

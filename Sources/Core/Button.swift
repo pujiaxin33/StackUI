@@ -158,4 +158,9 @@ public extension StackUIButton {
     }
 }
 
-open class Button: UIButton, StackUIButton {}
+open class Button: UIButton, StackUIButton {
+    public func apply(_ closure: (Self) -> ()) -> Self {
+        closure(self)
+        return self
+    }
+}

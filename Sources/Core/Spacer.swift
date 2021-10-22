@@ -11,7 +11,7 @@ import UIKit
 /// 1, HStack and there is no limit to the width
 /// 2. Vstack and no height limit
 /// Otherwise Spacer is adjusted by UIStackView
-open class Spacer: UIView {
+open class Spacer: View {
     public let spacing: CGFloat
     var axis: NSLayoutConstraint.Axis? {
         didSet {
