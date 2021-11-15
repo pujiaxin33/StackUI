@@ -181,7 +181,7 @@ class CustomLabel: Label {
 ### 父类无法修改，遵从协议
 遵从`StackUIView`、`StackUILabel`等协议，再扩展自定义的属性。
 ```Swift
-class CustomViewFromProtocol: UIView, StackUIView {
+class CustomView: UIView, StackUIView {
     var customColor: UIColor = .black
     
     func customColor(_ customColor: UIColor) -> Self {
@@ -190,7 +190,7 @@ class CustomViewFromProtocol: UIView, StackUIView {
         return self
     }
 }
-class CustomLabelFromProtocol: UILabel, StackUILabel {
+class CustomLabel: UILabel, StackUILabel {
     var customColor: UIColor = .black
     
     func customColor(_ customColor: UIColor) -> Self {
