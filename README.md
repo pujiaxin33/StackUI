@@ -215,6 +215,15 @@ HStack(alignment: .center, spacing: 5) {
 }
 ```
 
+## `ViewBox` use
+Sometimes the view needs margins. At this time, you can put the view into the ViewBox, and then set the paddings, so you can indirectly set the top, bottom, left, and right margins of the view.
+As shown in the following code: Label has margins of `top: 10, left: 20, bottom: 10, right: 20`.
+```Swift
+ViewBox(paddings: .init(top: 10, left: 20, bottom: 10, right: 20)) {
+     Label("Hobbies: writing code;").font(. systemFont(ofSize: 15)).numberOfLines(0)
+}.backgroundColor(.lightGray)
+```
+
 # Currently supported classes
 - `Layer`:The relevant properties of `Layer` are configured in the `View` class
 - `View`

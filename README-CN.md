@@ -214,6 +214,15 @@ HStack(alignment: .center, spacing: 5) {
 }
 ```
 
+## `ViewBox`使用
+有时候控件需要额外的间距，这个时候可以把该控件放入ViewBox，然后设置paddings设置内边距，就可以间接实现控件上下左右边距的设置。
+如下代码所示：Label就有了`top: 10, left: 20, bottom: 10, right: 20`的边距了。
+```Swift
+ViewBox(paddings: .init(top: 10, left: 20, bottom: 10, right: 20)) {
+    Label("爱好：写代码；写代码；写代码；写代码；写代码；写代码；写代码；写代码；写代码；写代码；写代码；写代码；写代码；").font(.systemFont(ofSize: 15)).numberOfLines(0)
+}.backgroundColor(.lightGray)
+```
+
 # 目前支持的类
 - `Layer`的相关属性配置在`View`类
 - `View`

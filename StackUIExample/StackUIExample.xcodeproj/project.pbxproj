@@ -25,6 +25,7 @@
 		EAB9DE3C27181E1C009DAE51 /* TextDriverViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAB9DE3B27181E1C009DAE51 /* TextDriverViewController.swift */; };
 		EAB9DE3E2718203E009DAE51 /* HScrollStackViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAB9DE3D2718203E009DAE51 /* HScrollStackViewController.swift */; };
 		EAB9DE40271824A7009DAE51 /* FoodCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAB9DE3F271824A7009DAE51 /* FoodCell.swift */; };
+		EAF8D59C274E412A00AE1569 /* ViewBoxViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAF8D59B274E412A00AE1569 /* ViewBoxViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -50,6 +51,7 @@
 		EAB9DE3B27181E1C009DAE51 /* TextDriverViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextDriverViewController.swift; sourceTree = "<group>"; };
 		EAB9DE3D2718203E009DAE51 /* HScrollStackViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HScrollStackViewController.swift; sourceTree = "<group>"; };
 		EAB9DE3F271824A7009DAE51 /* FoodCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodCell.swift; sourceTree = "<group>"; };
+		EAF8D59B274E412A00AE1569 /* ViewBoxViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewBoxViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -144,6 +146,7 @@
 				EAB9DE3B27181E1C009DAE51 /* TextDriverViewController.swift */,
 				EA2059A8271D11E300579D01 /* CustomViewViewController.swift */,
 				EA2059AC271D201500579D01 /* IfViewController.swift */,
+				EAF8D59B274E412A00AE1569 /* ViewBoxViewController.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -254,6 +257,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				EAB9DE38271818BC009DAE51 /* VScrollStackViewController.swift in Sources */,
+				EAF8D59C274E412A00AE1569 /* ViewBoxViewController.swift in Sources */,
 				EAB9DE3C27181E1C009DAE51 /* TextDriverViewController.swift in Sources */,
 				EAB9DE1F2718063D009DAE51 /* ViewController.swift in Sources */,
 				EAB9DE3E2718203E009DAE51 /* HScrollStackViewController.swift in Sources */,
