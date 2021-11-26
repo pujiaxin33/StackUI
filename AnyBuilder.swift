@@ -8,7 +8,7 @@
 import Foundation
 
 @resultBuilder
-public enum AnyBuilder<BuilderItem> {
+public struct AnyBuilder<BuilderItem> {
     public static func buildExpression(_ expression: BuilderItem) -> [BuilderItem] {
         return [expression]
     }
