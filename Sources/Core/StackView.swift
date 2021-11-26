@@ -50,16 +50,8 @@ open class HScrollStack: UIView, StackUIView {
     private let stackView: UIStackView
     private let scrollView: UIScrollView
     public init(distribution: UIStackView.Distribution = .fill, alignment: UIStackView.Alignment = .fill, spacing: CGFloat = 0, @AnyBuilder<UIView> views: () -> [UIView]) {
-        scrollView = UIScrollView()
+        
         let views = views()
-        stackView = UIStackView(arrangedSubviews: views)
-        stackView.axis = .horizontal
-        stackView.distribution = distribution
-        stackView.alignment = alignment
-        stackView.spacing = spacing
-        super.init(frame: .zero)
-        addSubview(scrollView)
-        scrollView.addSubview(stackView)
         views.forEach { view in
             if let spacer = view as? Spacer {
                 spacer.axis = .horizontal
@@ -68,17 +60,28 @@ open class HScrollStack: UIView, StackUIView {
                 divider.axis = .horizontal
             }
         }
+        scrollView = UIScrollView()
+        stackView = UIStackView(arrangedSubviews: views)
+        stackView.axis = .horizontal
+        stackView.distribution = distribution
+        stackView.alignment = alignment
+        stackView.spacing = spacing
+        super.init(frame: .zero)
+        
+        addSubview(scrollView)
+        scrollView.translatesAutoresizingMaskIntoConstraints = false
+        scrollView.topAnchor.constraint(equalTo: self.topAnchor).isActive = true
+        scrollView.leadingAnchor.constraint(equalTo: self.leadingAnchor).isActive = true
+        scrollView.bottomAnchor.constraint(equalTo: self.bottomAnchor).isActive = true
+        scrollView.trailingAnchor.constraint(equalTo: self.trailingAnchor).isActive = true
+        
+        scrollView.addSubview(stackView)
         stackView.translatesAutoresizingMaskIntoConstraints = false
         stackView.topAnchor.constraint(equalTo: scrollView.topAnchor).isActive = true
         stackView.leadingAnchor.constraint(equalTo: scrollView.leadingAnchor).isActive = true
         stackView.bottomAnchor.constraint(equalTo: scrollView.bottomAnchor).isActive = true
         stackView.trailingAnchor.constraint(equalTo: scrollView.trailingAnchor).isActive = true
         stackView.heightAnchor.constraint(equalTo: scrollView.heightAnchor).isActive = true
-    }
-    
-    public override func layoutSubviews() {
-        super.layoutSubviews()
-        scrollView.frame = bounds
     }
     
     @available(*, unavailable)
@@ -92,16 +95,8 @@ open class VScrollStack: UIView, StackUIView {
     private let stackView: UIStackView
     private let scrollView: UIScrollView
     public init(distribution: UIStackView.Distribution = .fill, alignment: UIStackView.Alignment = .fill, spacing: CGFloat = 0, @AnyBuilder<UIView> views: () -> [UIView]) {
-        scrollView = UIScrollView()
+        
         let views = views()
-        stackView = UIStackView(arrangedSubviews: views)
-        stackView.axis = .vertical
-        stackView.distribution = distribution
-        stackView.alignment = alignment
-        stackView.spacing = spacing
-        super.init(frame: .zero)
-        addSubview(scrollView)
-        scrollView.addSubview(stackView)
         views.forEach { view in
             if let spacer = view as? Spacer {
                 spacer.axis = .vertical
@@ -110,17 +105,28 @@ open class VScrollStack: UIView, StackUIView {
                 divider.axis = .vertical
             }
         }
+        scrollView = UIScrollView()
+        stackView = UIStackView(arrangedSubviews: views)
+        stackView.axis = .vertical
+        stackView.distribution = distribution
+        stackView.alignment = alignment
+        stackView.spacing = spacing
+        super.init(frame: .zero)
+        
+        addSubview(scrollView)
+        scrollView.translatesAutoresizingMaskIntoConstraints = false
+        scrollView.topAnchor.constraint(equalTo: self.topAnchor).isActive = true
+        scrollView.leadingAnchor.constraint(equalTo: self.leadingAnchor).isActive = true
+        scrollView.bottomAnchor.constraint(equalTo: self.bottomAnchor).isActive = true
+        scrollView.trailingAnchor.constraint(equalTo: self.trailingAnchor).isActive = true
+        
+        scrollView.addSubview(stackView)
         stackView.translatesAutoresizingMaskIntoConstraints = false
         stackView.topAnchor.constraint(equalTo: scrollView.topAnchor).isActive = true
         stackView.leadingAnchor.constraint(equalTo: scrollView.leadingAnchor).isActive = true
         stackView.bottomAnchor.constraint(equalTo: scrollView.bottomAnchor).isActive = true
         stackView.trailingAnchor.constraint(equalTo: scrollView.trailingAnchor).isActive = true
         stackView.widthAnchor.constraint(equalTo: scrollView.widthAnchor).isActive = true
-    }
-    
-    public override func layoutSubviews() {
-        super.layoutSubviews()
-        scrollView.frame = bounds
     }
 
     @available(*, unavailable)
