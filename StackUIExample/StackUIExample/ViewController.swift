@@ -37,7 +37,7 @@ class ViewController: UITableViewController {
         switch indexPath.row {
         case 0:
             let cell = tableView.dequeueReusableCell(withIdentifier: "UITableViewCell", for: indexPath)
-            cell.textLabel?.text = "ForEach"
+            cell.textLabel?.text = "ForIn"
             return cell
         case 1:
             let cell = tableView.dequeueReusableCell(withIdentifier: "UITableViewCell", for: indexPath)

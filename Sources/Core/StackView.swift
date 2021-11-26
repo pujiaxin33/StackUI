@@ -7,71 +7,8 @@
 
 import UIKit
 
-private class ContainerView: UIView {
-    let items: [UIView]
-    init(items: [UIView]) {
-        self.items = items
-        super.init(frame: .zero)
-    }
-    
-    required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
-}
-
-@resultBuilder
-public struct StackBuilder {
-    public static func buildBlock(_ children: UIView...) -> [UIView] {
-        var result = [UIView]()
-        for view in children {
-            if let container = view as? ContainerView {
-                result.append(contentsOf: container.items)
-            }else if let list = view as? ForEachIdentifier {
-                result.append(contentsOf: list.items)
-            }
-            else {
-                result.append(view)
-            }
-        }
-        return result
-    }
-    public static func buildOptional(_ views: [UIView]?) -> UIView {
-        return ContainerView(items: views ?? [])
-    }
-    public static func buildEither(first views: [UIView]) -> UIView {
-        return ContainerView(items: views)
-    }
-    public static func buildEither(second views: [UIView]) -> UIView {
-        return ContainerView(items: views)
-    }
-}
-
-public class ForEach<Data>: UIView where Data : RandomAccessCollection {
-    let data: Data
-    let items: [UIView]
-    public init(_ data: Data, content: @escaping (Data.Element) -> UIView) {
-        self.data = data
-        var array = [UIView]()
-        for item in data {
-            let view = content(item)
-            array.append(view)
-        }
-        items = array
-        super.init(frame: .zero)
-    }
-    
-    public required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
-}
-
-protocol ForEachIdentifier {
-    var items: [UIView] { get }
-}
-extension ForEach: ForEachIdentifier {}
-
 open class HStack: UIStackView, StackUIView {
-    public convenience init(distribution: UIStackView.Distribution = .fill, alignment: UIStackView.Alignment = .fill, spacing: CGFloat = 0, @StackBuilder views: () -> [UIView]) {
+    public convenience init(distribution: UIStackView.Distribution = .fill, alignment: UIStackView.Alignment = .fill, spacing: CGFloat = 0, @AnyBuilder<UIView> views: () -> [UIView]) {
         let views = views()
         self.init(arrangedSubviews: views)
         views.forEach { view in
@@ -90,7 +27,7 @@ open class HStack: UIStackView, StackUIView {
 }
 
 open class VStack: UIStackView, StackUIView {
-    public convenience init(distribution: UIStackView.Distribution = .fill, alignment: UIStackView.Alignment = .fill, spacing: CGFloat = 0, @StackBuilder views: () -> [UIView]) {
+    public convenience init(distribution: UIStackView.Distribution = .fill, alignment: UIStackView.Alignment = .fill, spacing: CGFloat = 0, @AnyBuilder<UIView> views: () -> [UIView]) {
         let views = views()
         self.init(arrangedSubviews: views)
         views.forEach { view in
@@ -112,7 +49,7 @@ open class VStack: UIStackView, StackUIView {
 open class HScrollStack: UIView, StackUIView {
     private let stackView: UIStackView
     private let scrollView: UIScrollView
-    public init(distribution: UIStackView.Distribution = .fill, alignment: UIStackView.Alignment = .fill, spacing: CGFloat = 0, @StackBuilder views: () -> [UIView]) {
+    public init(distribution: UIStackView.Distribution = .fill, alignment: UIStackView.Alignment = .fill, spacing: CGFloat = 0, @AnyBuilder<UIView> views: () -> [UIView]) {
         scrollView = UIScrollView()
         let views = views()
         stackView = UIStackView(arrangedSubviews: views)
@@ -154,7 +91,7 @@ open class HScrollStack: UIView, StackUIView {
 open class VScrollStack: UIView, StackUIView {
     private let stackView: UIStackView
     private let scrollView: UIScrollView
-    public init(distribution: UIStackView.Distribution = .fill, alignment: UIStackView.Alignment = .fill, spacing: CGFloat = 0, @StackBuilder views: () -> [UIView]) {
+    public init(distribution: UIStackView.Distribution = .fill, alignment: UIStackView.Alignment = .fill, spacing: CGFloat = 0, @AnyBuilder<UIView> views: () -> [UIView]) {
         scrollView = UIScrollView()
         let views = views()
         stackView = UIStackView(arrangedSubviews: views)

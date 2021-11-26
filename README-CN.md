@@ -20,7 +20,7 @@
 
 - iOS 9.0+
 - XCode 13.0+
-- Swift 5.0+
+- Swift 5.4+
 
 # 安装
 
@@ -40,7 +40,7 @@ end
 
 - File > Swift Packages > Add Package Dependency
 - Add https://github.com/pujiaxin33/StackUI.git
-- Select "Up to Next Major" with "0.0.3"
+- Select "Up to Next Major" with "0.0.5"
 - 如果你想使用`RxSwift`特性，选择`StackUISwithRxSwift` Product
 
 # 使用示例
@@ -61,7 +61,7 @@ end
     }
 ```
 
-## `HScrollStack`和`ForEach`使用
+## `HScrollStack`和`ForIn`使用
 
 ```Swift
     var users = [UserModel]()
@@ -70,7 +70,7 @@ end
         users.append(model)
     }
     HScrollStack() {
-        ForEach(users) { (model) in
+        for model in users {
             HStack(alignment: .center, spacing: 5) {
                 Spacer(spacing: 12)
                 ImageView().image(UIImage(named: model.avatar)).size(width: 80, height: 80)

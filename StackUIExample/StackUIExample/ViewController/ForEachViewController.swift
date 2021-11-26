@@ -15,7 +15,7 @@ class ForEachViewController: UIViewController {
         
         view.backgroundColor = .white
         edgesForExtendedLayout = .init(rawValue: 0)
-        title = "ForEach"
+        title = "ForIn"
 
         var users = [UserModel]()
         for index in 0...5 {
@@ -24,7 +24,7 @@ class ForEachViewController: UIViewController {
         }
         
         let stack = VStack() {
-            ForEach(users) { (model) in
+            for model in users {
                 VStack {
                     HStack(alignment: .center, spacing: 5) {
                         ImageView().image(UIImage(named: model.avatar)).size(width: 40, height: 40)

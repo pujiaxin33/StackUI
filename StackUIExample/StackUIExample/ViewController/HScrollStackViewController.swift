@@ -24,7 +24,7 @@ class HScrollStackViewController: UIViewController {
         }
         
         let stack = HScrollStack() {
-            ForEach(users) { (model) in
+            for model in users {
                 HStack(alignment: .center, spacing: 5) {
                     Spacer(spacing: 12)
                     ImageView().image(UIImage(named: model.avatar)).size(width: 80, height: 80)

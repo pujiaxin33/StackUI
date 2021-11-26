@@ -22,7 +22,7 @@ If you are tired of configuring the constraints of UIKit, then `StackUI` will be
 
 - iOS 9.0+
 - XCode 13.0+
-- Swift 5.0+
+- Swift 5.4+
 
 # Install
 
@@ -42,7 +42,7 @@ Execute `pod repo update` first, then execute `pod install`
 
 - File> Swift Packages> Add Package Dependency
 - Add https://github.com/pujiaxin33/StackUI.git
-- Select "Up to Next Major" with "0.0.3"
+- Select "Up to Next Major" with "0.0.5"
 - If you want to use `RxSwift` feature, select `StackUISwithRxSwift` Product
 
 # Example 
@@ -63,7 +63,7 @@ Execute `pod repo update` first, then execute `pod install`
     }
 ```
 
-## `HScrollStack` and `ForEach`
+## `HScrollStack` and `ForIn`
 
 ```Swift
     var users = [UserModel]()
@@ -72,7 +72,7 @@ Execute `pod repo update` first, then execute `pod install`
         users.append(model)
     }
     HScrollStack() {
-        ForEach(users) {(model) in
+        for model in users {
             HStack(alignment: .center, spacing: 5) {
                 Spacer(spacing: 12)
                 ImageView().image(UIImage(named: model.avatar)).size(width: 80, height: 80)

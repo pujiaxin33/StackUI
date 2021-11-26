@@ -1,12 +1,12 @@
 
 Pod::Spec.new do |s|
   s.name         = "StackUI"
-  s.version      = "0.0.4"
+  s.version      = "0.0.5"
   s.summary      = "StackUI just like SwiftUI"
   s.homepage     = "https://github.com/pujiaxin33/StackUI"
   s.author       = { "pujiaxin33" => "317437084@qq.com" }
   s.platform     = :ios, "9.0"
-  s.swift_versions = ["5.0"]
+  s.swift_versions = ["5.4"]
   s.source       = { :git => "https://github.com/pujiaxin33/StackUI.git", :tag => "#{s.version}" }
   s.license      = "MIT"
   s.default_subspec = 'Core'

@@ -24,7 +24,7 @@ class VScrollStackViewController: UIViewController {
         }
         
         let stack = VScrollStack() {
-            ForEach(users) { (model) in
+            for model in users {
                 VStack {
                     HStack(alignment: .center, spacing: 5) {
                         Spacer(spacing: 12)
