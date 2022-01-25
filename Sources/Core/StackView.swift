@@ -79,6 +79,10 @@ open class HScrollStack: UIView, StackUIView {
     public init(distribution: UIStackView.Distribution = .fill, alignment: UIStackView.Alignment = .fill, spacing: CGFloat = 0, @ViewBuilder views: () -> [UIView]) {
         
         let views = views()
+        scrollView = UIScrollView()
+        scrollView.showsHorizontalScrollIndicator = false
+        scrollView.showsVerticalScrollIndicator = false
+        stackView = UIStackView(arrangedSubviews: views)
         views.forEach { view in
             if let spacer = view as? Spacer {
                 spacer.axis = .horizontal
@@ -87,10 +91,6 @@ open class HScrollStack: UIView, StackUIView {
                 divider.axis = .horizontal
             }
         }
-        scrollView = UIScrollView()
-        scrollView.showsHorizontalScrollIndicator = false
-        scrollView.showsVerticalScrollIndicator = false
-        stackView = UIStackView(arrangedSubviews: views)
         stackView.axis = .horizontal
         stackView.distribution = distribution
         stackView.alignment = alignment
@@ -131,6 +131,10 @@ open class VScrollStack: UIView, StackUIView {
     public init(distribution: UIStackView.Distribution = .fill, alignment: UIStackView.Alignment = .fill, spacing: CGFloat = 0, @ViewBuilder views: () -> [UIView]) {
         
         let views = views()
+        scrollView = UIScrollView()
+        scrollView.showsHorizontalScrollIndicator = false
+        scrollView.showsVerticalScrollIndicator = false
+        stackView = UIStackView(arrangedSubviews: views)
         views.forEach { view in
             if let spacer = view as? Spacer {
                 spacer.axis = .vertical
@@ -139,10 +143,6 @@ open class VScrollStack: UIView, StackUIView {
                 divider.axis = .vertical
             }
         }
-        scrollView = UIScrollView()
-        scrollView.showsHorizontalScrollIndicator = false
-        scrollView.showsVerticalScrollIndicator = false
-        stackView = UIStackView(arrangedSubviews: views)
         stackView.axis = .vertical
         stackView.distribution = distribution
         stackView.alignment = alignment
