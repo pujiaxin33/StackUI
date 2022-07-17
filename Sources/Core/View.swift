@@ -123,6 +123,14 @@ public extension StackUIView {
         self.isHidden = isHidden
         return self
     }
+
+    func isHidden(_ publisher: Publisher<Bool>) -> Self {
+        publisher.addSubscriber {[weak self] isHidden in
+            self?.isHidden = isHidden
+        }
+        return self
+    }
+
     func contentMode(_ contentMode: UIView.ContentMode) -> Self {
         self.contentMode = contentMode
         return self
