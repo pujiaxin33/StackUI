@@ -127,7 +127,9 @@ public extension StackUILabel {
         return self
     }
     func lineBreakStrategy(_ lineBreakStrategy: NSParagraphStyle.LineBreakStrategy) -> Self {
-        self.lineBreakStrategy = lineBreakStrategy
+        if #available(iOS 14.0, *) {
+            self.lineBreakStrategy = lineBreakStrategy
+        }
         return self
     }
     func preferredMaxLayoutWidth(_ preferredMaxLayoutWidth: CGFloat) -> Self {

@@ -42,11 +42,7 @@ class IfViewController: UIViewController {
             }
             ImageView().image(UIImage(named: "arrow_right"))
         }
-        view.addSubview(stack!)
-        stack?.translatesAutoresizingMaskIntoConstraints = false
-        stack?.topAnchor.constraint(equalTo: view.topAnchor).isActive = true
-        stack?.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 12).isActive = true
-        stack?.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -12).isActive = true
+        .embedToTop(in: view, paddings: .horizontal(12))
     }
 
     @objc func didNaviRightItemClicked() {

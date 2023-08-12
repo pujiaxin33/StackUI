@@ -17,7 +17,7 @@ class CustomViewViewController: UIViewController {
         edgesForExtendedLayout = .init(rawValue: 0)
         title = "CustomView"
         
-        let stack = HStack(distribution: .equalCentering, alignment: .center) {
+        HStack(distribution: .equalCentering, alignment: .center) {
             HStack(alignment: .center, spacing: 5) {
                 CustomView().customColor(.lightGray).size(width: 40, height: 40)
                 CustomViewFromProtocol().customColor(.gray).size(width: 40, height: 40)
@@ -28,12 +28,8 @@ class CustomViewViewController: UIViewController {
             }
             ImageView().image(UIImage(named: "arrow_right"))
         }
-        view.addSubview(stack)
-        stack.translatesAutoresizingMaskIntoConstraints = false
-        stack.topAnchor.constraint(equalTo: view.topAnchor).isActive = true
-        stack.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 12).isActive = true
-        stack.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -12).isActive = true
+        .embedToTop(in: view, paddings: .horizontal(12))
     }
-    
+
 
 }

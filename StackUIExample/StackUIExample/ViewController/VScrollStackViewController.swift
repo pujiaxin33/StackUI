@@ -23,7 +23,7 @@ class VScrollStackViewController: UIViewController {
             users.append(model)
         }
         
-        let stack = VScrollStack() {
+        VScrollStack() {
             for model in users {
                 VStack {
                     HStack(alignment: .center, spacing: 5) {
@@ -38,12 +38,7 @@ class VScrollStackViewController: UIViewController {
                 }.size(height: 80)
             }
         }
-        view.addSubview(stack)
-        stack.translatesAutoresizingMaskIntoConstraints = false
-        stack.topAnchor.constraint(equalTo: view.topAnchor).isActive = true
-        stack.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
-        stack.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
-        stack.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
+        .embed(in: view)
     }
 
 

@@ -22,8 +22,8 @@ class ForEachViewController: UIViewController {
             let model = UserModel(avatar: "avatar", name: "用户\(index)", desc: "用户描述\(index)")
             users.append(model)
         }
-        
-        let stack = VStack() {
+
+        VStack() {
             for model in users {
                 VStack {
                     HStack(alignment: .center, spacing: 5) {
@@ -41,11 +41,7 @@ class ForEachViewController: UIViewController {
                 }.size(height: 80)
             }
         }
-        view.addSubview(stack)
-        stack.translatesAutoresizingMaskIntoConstraints = false
-        stack.topAnchor.constraint(equalTo: view.topAnchor).isActive = true
-        stack.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 12).isActive = true
-        stack.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -12).isActive = true
+        .embedToTop(in: view, paddings: .horizontal(12))
     }
 
 }

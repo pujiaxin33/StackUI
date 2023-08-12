@@ -16,14 +16,14 @@ class HScrollStackViewController: UIViewController {
         view.backgroundColor = .white
         edgesForExtendedLayout = .init(rawValue: 0)
         title = "HScrollStack"
-        
+
         var users = [UserModel]()
         for index in 0...25 {
             let model = UserModel(avatar: "avatar", name: "用户\(index)", desc: "用户描述\(index)")
             users.append(model)
         }
-        
-        let stack = HScrollStack() {
+
+        HScrollStack() {
             for model in users {
                 HStack(alignment: .center, spacing: 5) {
                     Spacer(spacing: 12)
@@ -36,12 +36,8 @@ class HScrollStackViewController: UIViewController {
                 }.size(width: 300)
             }
         }
-        view.addSubview(stack)
-        stack.translatesAutoresizingMaskIntoConstraints = false
-        stack.topAnchor.constraint(equalTo: view.topAnchor, constant: 100).isActive = true
-        stack.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
-        stack.heightAnchor.constraint(equalToConstant: 100).isActive = true
-        stack.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
+        .size(height: 100)
+        .embedToTop(in: view, paddings: .init(top: 100))
     }
 
 }

@@ -6,9 +6,10 @@
 //
 
 import UIKit
-import StackUI
 import RxSwift
 import RxCocoa
+import StackUI
+import StackUIWithRxSwift
 
 class TextDriverViewController: UIViewController {
     var nickName = PublishSubject<String?>()
@@ -27,7 +28,7 @@ class TextDriverViewController: UIViewController {
         
         navigationItem.rightBarButtonItem = UIBarButtonItem(title: "更新", style: .plain, target: self, action: #selector(didNaviRightItemClicked))
 
-        let stack = HStack(distribution: .equalCentering, alignment: .center) {
+        HStack(distribution: .equalCentering, alignment: .center) {
             HStack(alignment: .center, spacing: 5) {
                 ImageView().image(UIImage(named: "avatar")).size(width: 40, height: 40)
                 VStack {
@@ -37,12 +38,8 @@ class TextDriverViewController: UIViewController {
             }
             ImageView().image(UIImage(named: "arrow_right"))
         }
-        view.addSubview(stack)
-        stack.translatesAutoresizingMaskIntoConstraints = false
-        stack.topAnchor.constraint(equalTo: view.topAnchor).isActive = true
-        stack.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 12).isActive = true
-        stack.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -12).isActive = true
-        
+        .embedToTop(in: view, paddings: .horizontal(12))
+
         nickName.onNext("用户昵称")
         desc.onNext("用户很懒，什么都没有留下来！")
     }

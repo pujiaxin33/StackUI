@@ -13,8 +13,8 @@ class FoodCell: UITableViewCell {
 
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
-        
-        let stack = HStack(distribution: .fill, alignment: .top, spacing: 5) {
+
+        HStack(distribution: .fill, alignment: .top, spacing: 5) {
             ImageView().image(UIImage(named: "avatar")).size(width: 80, height: 80)
             VStack(spacing: 5) {
                 Label("超值购！！！红烧狮子头（1个单点不送）美味好吃，吃了还想吃").font(.systemFont(ofSize: 18, weight: .medium)).numberOfLines(2)
@@ -39,18 +39,13 @@ class FoodCell: UITableViewCell {
                 }
             }
         }
-        contentView.addSubview(stack)
-        stack.translatesAutoresizingMaskIntoConstraints = false
-        stack.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 10).isActive = true
-        stack.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 12).isActive = true
-        stack.bottomAnchor.constraint(equalTo: contentView.bottomAnchor).isActive = true
-        stack.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -12).isActive = true
+        .embed(in: contentView, paddings: .init(top: 10, leading: 12, trailing: 12))
     }
-    
+
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-    
+
     @objc func addToShppingCar(_ btn: UIButton) {
         addCallBack?()
     }
