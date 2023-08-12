@@ -1,7 +1,7 @@
 
 Pod::Spec.new do |s|
   s.name         = "StackUI"
-  s.version      = "0.0.11"
+  s.version      = "0.0.12"
   s.summary      = "StackUI just like SwiftUI"
   s.homepage     = "https://github.com/pujiaxin33/StackUI"
   s.author       = { "pujiaxin33" => "317437084@qq.com" }
