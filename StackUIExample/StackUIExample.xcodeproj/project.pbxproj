@@ -3,11 +3,12 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 55;
+	objectVersion = 60;
 	objects = {
 
 /* Begin PBXBuildFile section */
-		1E75FF6F8389D3D8BA9B71D6 /* libPods-StackUIExample.a in Frameworks */ = {isa = PBXBuildFile; fileRef = DC945D732FFC7D0646776FCE /* libPods-StackUIExample.a */; };
+		BBAEF7412A83BF7C003E6BA7 /* StackUI in Frameworks */ = {isa = PBXBuildFile; productRef = BBAEF7402A83BF7C003E6BA7 /* StackUI */; };
+		BBAEF7432A83BF7C003E6BA7 /* StackUIWithRxSwift in Frameworks */ = {isa = PBXBuildFile; productRef = BBAEF7422A83BF7C003E6BA7 /* StackUIWithRxSwift */; };
 		EA2059A7271D111600579D01 /* CustomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA2059A6271D111600579D01 /* CustomView.swift */; };
 		EA2059A9271D11E300579D01 /* CustomViewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA2059A8271D11E300579D01 /* CustomViewViewController.swift */; };
 		EA2059AB271D124900579D01 /* CustomLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA2059AA271D124900579D01 /* CustomLabel.swift */; };
@@ -29,8 +30,6 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		4C576E0C2B0D19A5417A85E4 /* Pods-StackUIExample.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StackUIExample.debug.xcconfig"; path = "Target Support Files/Pods-StackUIExample/Pods-StackUIExample.debug.xcconfig"; sourceTree = "<group>"; };
-		B790A055610F52DD1645BB26 /* Pods-StackUIExample.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StackUIExample.release.xcconfig"; path = "Target Support Files/Pods-StackUIExample/Pods-StackUIExample.release.xcconfig"; sourceTree = "<group>"; };
 		DC945D732FFC7D0646776FCE /* libPods-StackUIExample.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-StackUIExample.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		EA2059A6271D111600579D01 /* CustomView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomView.swift; sourceTree = "<group>"; };
 		EA2059A8271D11E300579D01 /* CustomViewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomViewViewController.swift; sourceTree = "<group>"; };
@@ -59,7 +58,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1E75FF6F8389D3D8BA9B71D6 /* libPods-StackUIExample.a in Frameworks */,
+				BBAEF7412A83BF7C003E6BA7 /* StackUI in Frameworks */,
+				BBAEF7432A83BF7C003E6BA7 /* StackUIWithRxSwift in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -72,15 +72,6 @@
 				DC945D732FFC7D0646776FCE /* libPods-StackUIExample.a */,
 			);
 			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		E9247A8FD9AF5744F8912279 /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				4C576E0C2B0D19A5417A85E4 /* Pods-StackUIExample.debug.xcconfig */,
-				B790A055610F52DD1645BB26 /* Pods-StackUIExample.release.xcconfig */,
-			);
-			path = Pods;
 			sourceTree = "<group>";
 		};
 		EA2059A5271D110400579D01 /* View */ = {
@@ -97,7 +88,6 @@
 			children = (
 				EAB9DE192718063D009DAE51 /* StackUIExample */,
 				EAB9DE182718063D009DAE51 /* Products */,
-				E9247A8FD9AF5744F8912279 /* Pods */,
 				874C2AB74E9E0F89A82BC0CB /* Frameworks */,
 			);
 			sourceTree = "<group>";
@@ -166,7 +156,6 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = EAB9DE2B2718063F009DAE51 /* Build configuration list for PBXNativeTarget "StackUIExample" */;
 			buildPhases = (
-				8A5436473F166DB7133D2A70 /* [CP] Check Pods Manifest.lock */,
 				EAB9DE132718063D009DAE51 /* Sources */,
 				EAB9DE142718063D009DAE51 /* Frameworks */,
 				EAB9DE152718063D009DAE51 /* Resources */,
@@ -176,6 +165,10 @@
 			dependencies = (
 			);
 			name = StackUIExample;
+			packageProductDependencies = (
+				BBAEF7402A83BF7C003E6BA7 /* StackUI */,
+				BBAEF7422A83BF7C003E6BA7 /* StackUIWithRxSwift */,
+			);
 			productName = StackUIExample;
 			productReference = EAB9DE172718063D009DAE51 /* StackUIExample.app */;
 			productType = "com.apple.product-type.application";
@@ -188,7 +181,7 @@
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
 				LastSwiftUpdateCheck = 1300;
-				LastUpgradeCheck = 1300;
+				LastUpgradeCheck = 1500;
 				TargetAttributes = {
 					EAB9DE162718063D009DAE51 = {
 						CreatedOnToolsVersion = 13.0;
@@ -204,6 +197,9 @@
 				Base,
 			);
 			mainGroup = EAB9DE0E2718063D009DAE51;
+			packageReferences = (
+				BBAEF73F2A83BF7C003E6BA7 /* XCLocalSwiftPackageReference ".." */,
+			);
 			productRefGroup = EAB9DE182718063D009DAE51 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -225,31 +221,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
-
-/* Begin PBXShellScriptBuildPhase section */
-		8A5436473F166DB7133D2A70 /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-StackUIExample-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		EAB9DE132718063D009DAE51 /* Sources */ = {
@@ -333,6 +304,7 @@
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -394,6 +366,7 @@
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
@@ -414,7 +387,6 @@
 		};
 		EAB9DE2C2718063F009DAE51 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 4C576E0C2B0D19A5417A85E4 /* Pods-StackUIExample.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -428,7 +400,7 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -445,7 +417,6 @@
 		};
 		EAB9DE2D2718063F009DAE51 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = B790A055610F52DD1645BB26 /* Pods-StackUIExample.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -459,7 +430,7 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -496,6 +467,24 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCLocalSwiftPackageReference section */
+		BBAEF73F2A83BF7C003E6BA7 /* XCLocalSwiftPackageReference ".." */ = {
+			isa = XCLocalSwiftPackageReference;
+			relativePath = ..;
+		};
+/* End XCLocalSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		BBAEF7402A83BF7C003E6BA7 /* StackUI */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = StackUI;
+		};
+		BBAEF7422A83BF7C003E6BA7 /* StackUIWithRxSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = StackUIWithRxSwift;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = EAB9DE0F2718063D009DAE51 /* Project object */;
 }

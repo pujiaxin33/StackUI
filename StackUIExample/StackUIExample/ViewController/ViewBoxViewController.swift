@@ -12,12 +12,12 @@ class ViewBoxViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         view.backgroundColor = .white
         edgesForExtendedLayout = .init(rawValue: 0)
         title = "ViewBox"
         //有时候嵌套的控件需要额外的间距，这个时候可以把该控件放入ViewBox，然后设置paddings设置内边距，就可以间接实现控件上下左右边距的设置。
-        let stack = HStack(alignment: .center, spacing: 5) {
+        HStack(alignment: .center, spacing: 5) {
             ImageView().image(UIImage(named: "avatar")).size(width: 40, height: 40)
             VStack {
                 Label("昵称").font(.systemFont(ofSize: 18, weight: .medium))
@@ -32,12 +32,8 @@ class ViewBoxViewController: UIViewController {
                 }
             }
         }
-        view.addSubview(stack)
-        stack.translatesAutoresizingMaskIntoConstraints = false
-        stack.topAnchor.constraint(equalTo: view.topAnchor).isActive = true
-        stack.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
-        stack.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
+        .embedToTop(in: view)
     }
-    
+
 
 }

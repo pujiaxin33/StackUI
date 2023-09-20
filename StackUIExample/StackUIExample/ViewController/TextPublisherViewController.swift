@@ -25,7 +25,7 @@ class TextPublisherViewController: UIViewController {
         
         navigationItem.rightBarButtonItem = UIBarButtonItem(title: "更新", style: .plain, target: self, action: #selector(didNaviRightItemClicked))
 
-        let stack = HStack(distribution: .equalCentering, alignment: .center) {
+        HStack(distribution: .equalCentering, alignment: .center) {
             HStack(alignment: .center, spacing: 5) {
                 ImageView().image(UIImage(named: "avatar")).size(width: 40, height: 40)
                 VStack {
@@ -35,11 +35,7 @@ class TextPublisherViewController: UIViewController {
             }
             ImageView().image(UIImage(named: "arrow_right"))
         }
-        view.addSubview(stack)
-        stack.translatesAutoresizingMaskIntoConstraints = false
-        stack.topAnchor.constraint(equalTo: view.topAnchor).isActive = true
-        stack.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 12).isActive = true
-        stack.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -12).isActive = true
+        .embedToTop(in: view, paddings: .horizontal(12))
     }
     
     @objc func didNaviRightItemClicked() {
