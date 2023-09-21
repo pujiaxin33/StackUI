@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 60;
+	objectVersion = 55;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -30,6 +30,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		B22C7AEF2ABBCA88001A8DB7 /* StackUI */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = StackUI; path = ..; sourceTree = "<group>"; };
 		DC945D732FFC7D0646776FCE /* libPods-StackUIExample.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-StackUIExample.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		EA2059A6271D111600579D01 /* CustomView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomView.swift; sourceTree = "<group>"; };
 		EA2059A8271D11E300579D01 /* CustomViewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomViewViewController.swift; sourceTree = "<group>"; };
@@ -74,6 +75,14 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		B22C7AEE2ABBCA88001A8DB7 /* Packages */ = {
+			isa = PBXGroup;
+			children = (
+				B22C7AEF2ABBCA88001A8DB7 /* StackUI */,
+			);
+			name = Packages;
+			sourceTree = "<group>";
+		};
 		EA2059A5271D110400579D01 /* View */ = {
 			isa = PBXGroup;
 			children = (
@@ -86,6 +95,7 @@
 		EAB9DE0E2718063D009DAE51 = {
 			isa = PBXGroup;
 			children = (
+				B22C7AEE2ABBCA88001A8DB7 /* Packages */,
 				EAB9DE192718063D009DAE51 /* StackUIExample */,
 				EAB9DE182718063D009DAE51 /* Products */,
 				874C2AB74E9E0F89A82BC0CB /* Frameworks */,
@@ -179,7 +189,6 @@
 		EAB9DE0F2718063D009DAE51 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				BuildIndependentTargetsInParallel = 1;
 				LastSwiftUpdateCheck = 1300;
 				LastUpgradeCheck = 1500;
 				TargetAttributes = {
@@ -198,7 +207,7 @@
 			);
 			mainGroup = EAB9DE0E2718063D009DAE51;
 			packageReferences = (
-				BBAEF73F2A83BF7C003E6BA7 /* XCLocalSwiftPackageReference ".." */,
+				BBAEF73F2A83BF7C003E6BA7 /* XCLocalSwiftPackageReference "(null)" */,
 			);
 			productRefGroup = EAB9DE182718063D009DAE51 /* Products */;
 			projectDirPath = "";
@@ -469,9 +478,8 @@
 /* End XCConfigurationList section */
 
 /* Begin XCLocalSwiftPackageReference section */
-		BBAEF73F2A83BF7C003E6BA7 /* XCLocalSwiftPackageReference ".." */ = {
+		BBAEF73F2A83BF7C003E6BA7 /* XCLocalSwiftPackageReference "(null)" */ = {
 			isa = XCLocalSwiftPackageReference;
-			relativePath = ..;
 		};
 /* End XCLocalSwiftPackageReference section */
 
