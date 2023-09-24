@@ -15,10 +15,16 @@ public extension UIView {
 
         self.translatesAutoresizingMaskIntoConstraints = false
 
-        let top = ignoreSafeArea ? view.topAnchor : view.safeAreaLayoutGuide.topAnchor
-        let leading = ignoreSafeArea ? view.leadingAnchor : view.safeAreaLayoutGuide.leadingAnchor
-        let bottom = ignoreSafeArea ? view.bottomAnchor : view.safeAreaLayoutGuide.bottomAnchor
-        let trailing = ignoreSafeArea ? view.trailingAnchor : view.safeAreaLayoutGuide.trailingAnchor
+        var top = view.topAnchor
+        var leading = view.leadingAnchor
+        var bottom = view.bottomAnchor
+        var trailing = view.trailingAnchor
+        if !ignoreSafeArea, #available(iOS 11.0, *) {
+            top = view.safeAreaLayoutGuide.topAnchor
+            leading = view.safeAreaLayoutGuide.leadingAnchor
+            bottom = view.safeAreaLayoutGuide.bottomAnchor
+            trailing = view.safeAreaLayoutGuide.trailingAnchor
+        }
 
         NSLayoutConstraint.activate([
             self.topAnchor.constraint(equalTo: top, constant: paddings.top),
@@ -36,10 +42,16 @@ public extension UIView {
 
         self.translatesAutoresizingMaskIntoConstraints = false
 
-        let top = ignoreSafeArea ? view.topAnchor : view.safeAreaLayoutGuide.topAnchor
-        let leading = ignoreSafeArea ? view.leadingAnchor : view.safeAreaLayoutGuide.leadingAnchor
-        let bottom = ignoreSafeArea ? view.bottomAnchor : view.safeAreaLayoutGuide.bottomAnchor
-        let trailing = ignoreSafeArea ? view.trailingAnchor : view.safeAreaLayoutGuide.trailingAnchor
+        var top = view.topAnchor
+        var leading = view.leadingAnchor
+        var bottom = view.bottomAnchor
+        var trailing = view.trailingAnchor
+        if !ignoreSafeArea, #available(iOS 11.0, *) {
+            top = view.safeAreaLayoutGuide.topAnchor
+            leading = view.safeAreaLayoutGuide.leadingAnchor
+            bottom = view.safeAreaLayoutGuide.bottomAnchor
+            trailing = view.safeAreaLayoutGuide.trailingAnchor
+        }
 
         NSLayoutConstraint.activate([
             self.topAnchor.constraint(equalTo: top, constant: paddings.top),
@@ -57,10 +69,16 @@ public extension UIView {
 
         self.translatesAutoresizingMaskIntoConstraints = false
 
-        let top = ignoreSafeArea ? view.topAnchor : view.safeAreaLayoutGuide.topAnchor
-        let leading = ignoreSafeArea ? view.leadingAnchor : view.safeAreaLayoutGuide.leadingAnchor
-        let bottom = ignoreSafeArea ? view.bottomAnchor : view.safeAreaLayoutGuide.bottomAnchor
-        let trailing = ignoreSafeArea ? view.trailingAnchor : view.safeAreaLayoutGuide.trailingAnchor
+        var top = view.topAnchor
+        var leading = view.leadingAnchor
+        var bottom = view.bottomAnchor
+        var trailing = view.trailingAnchor
+        if !ignoreSafeArea, #available(iOS 11.0, *) {
+            top = view.safeAreaLayoutGuide.topAnchor
+            leading = view.safeAreaLayoutGuide.leadingAnchor
+            bottom = view.safeAreaLayoutGuide.bottomAnchor
+            trailing = view.safeAreaLayoutGuide.trailingAnchor
+        }
 
         NSLayoutConstraint.activate([
             self.topAnchor.constraint(equalTo: top, constant: paddings.top),
@@ -78,10 +96,16 @@ public extension UIView {
 
         self.translatesAutoresizingMaskIntoConstraints = false
 
-        let top = ignoreSafeArea ? view.topAnchor : view.safeAreaLayoutGuide.topAnchor
-        let leading = ignoreSafeArea ? view.leadingAnchor : view.safeAreaLayoutGuide.leadingAnchor
-        let bottom = ignoreSafeArea ? view.bottomAnchor : view.safeAreaLayoutGuide.bottomAnchor
-        let trailing = ignoreSafeArea ? view.trailingAnchor : view.safeAreaLayoutGuide.trailingAnchor
+        var top = view.topAnchor
+        var leading = view.leadingAnchor
+        var bottom = view.bottomAnchor
+        var trailing = view.trailingAnchor
+        if !ignoreSafeArea, #available(iOS 11.0, *) {
+            top = view.safeAreaLayoutGuide.topAnchor
+            leading = view.safeAreaLayoutGuide.leadingAnchor
+            bottom = view.safeAreaLayoutGuide.bottomAnchor
+            trailing = view.safeAreaLayoutGuide.trailingAnchor
+        }
 
         NSLayoutConstraint.activate([
             self.topAnchor.constraint(equalTo: top, constant: paddings.top),
@@ -99,10 +123,16 @@ public extension UIView {
 
         self.translatesAutoresizingMaskIntoConstraints = false
 
-        let top = ignoreSafeArea ? view.topAnchor : view.safeAreaLayoutGuide.topAnchor
-        let leading = ignoreSafeArea ? view.leadingAnchor : view.safeAreaLayoutGuide.leadingAnchor
-        let bottom = ignoreSafeArea ? view.bottomAnchor : view.safeAreaLayoutGuide.bottomAnchor
-        let trailing = ignoreSafeArea ? view.trailingAnchor : view.safeAreaLayoutGuide.trailingAnchor
+        var top = view.topAnchor
+        var leading = view.leadingAnchor
+        var bottom = view.bottomAnchor
+        var trailing = view.trailingAnchor
+        if !ignoreSafeArea, #available(iOS 11.0, *) {
+            top = view.safeAreaLayoutGuide.topAnchor
+            leading = view.safeAreaLayoutGuide.leadingAnchor
+            bottom = view.safeAreaLayoutGuide.bottomAnchor
+            trailing = view.safeAreaLayoutGuide.trailingAnchor
+        }
 
         NSLayoutConstraint.activate([
             self.topAnchor.constraint(greaterThanOrEqualTo: top, constant: paddings.top),
@@ -120,10 +150,16 @@ public extension UIView {
 
         self.translatesAutoresizingMaskIntoConstraints = false
 
-        let top = ignoreSafeArea ? view.topAnchor : view.safeAreaLayoutGuide.topAnchor
-        let leading = ignoreSafeArea ? view.leadingAnchor : view.safeAreaLayoutGuide.leadingAnchor
-        let bottom = ignoreSafeArea ? view.bottomAnchor : view.safeAreaLayoutGuide.bottomAnchor
-        let trailing = ignoreSafeArea ? view.trailingAnchor : view.safeAreaLayoutGuide.trailingAnchor
+        var top = view.topAnchor
+        var leading = view.leadingAnchor
+        var bottom = view.bottomAnchor
+        var trailing = view.trailingAnchor
+        if !ignoreSafeArea, #available(iOS 11.0, *) {
+            top = view.safeAreaLayoutGuide.topAnchor
+            leading = view.safeAreaLayoutGuide.leadingAnchor
+            bottom = view.safeAreaLayoutGuide.bottomAnchor
+            trailing = view.safeAreaLayoutGuide.trailingAnchor
+        }
 
         NSLayoutConstraint.activate([
             self.topAnchor.constraint(greaterThanOrEqualTo: top, constant: paddings.top),
@@ -141,11 +177,17 @@ public extension UIView {
 
         self.translatesAutoresizingMaskIntoConstraints = false
 
-        let top = ignoreSafeArea ? view.topAnchor : view.safeAreaLayoutGuide.topAnchor
-        let leading = ignoreSafeArea ? view.leadingAnchor : view.safeAreaLayoutGuide.leadingAnchor
-        let bottom = ignoreSafeArea ? view.bottomAnchor : view.safeAreaLayoutGuide.bottomAnchor
-        let trailing = ignoreSafeArea ? view.trailingAnchor : view.safeAreaLayoutGuide.trailingAnchor
-
+        var top = view.topAnchor
+        var leading = view.leadingAnchor
+        var bottom = view.bottomAnchor
+        var trailing = view.trailingAnchor
+        if !ignoreSafeArea, #available(iOS 11.0, *) {
+            top = view.safeAreaLayoutGuide.topAnchor
+            leading = view.safeAreaLayoutGuide.leadingAnchor
+            bottom = view.safeAreaLayoutGuide.bottomAnchor
+            trailing = view.safeAreaLayoutGuide.trailingAnchor
+        }
+        
         NSLayoutConstraint.activate([
             self.topAnchor.constraint(greaterThanOrEqualTo: top, constant: paddings.top),
             self.leadingAnchor.constraint(greaterThanOrEqualTo: leading, constant: paddings.left),
