@@ -153,3 +153,84 @@ open class VScrollStack: UIView, StackUIView {
         return self
     }
 }
+
+public class ZStack: UIView, StackUIView {
+    public enum Alignment: CaseIterable {
+        case center
+        case leading
+        case trailing
+        case top
+        case bottom
+        case topLeading
+        case topTrailing
+        case bottomLeading
+        case bottomTrailing
+    }
+    
+    public let alignment: Alignment
+    
+    public init(alignment: ZStack.Alignment = .center, @ViewBuilder views: () -> [UIView]) {
+        self.alignment = alignment
+        super.init(frame: .zero)
+        setupSubviews(views())
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
+    private func setupSubviews(_ views: [UIView]) {
+        views.forEach { view in
+            view.translatesAutoresizingMaskIntoConstraints = false
+            addSubview(view)
+            switch alignment {
+            case .center:
+                NSLayoutConstraint.activate([
+                    view.centerXAnchor.constraint(equalTo: self.centerXAnchor, constant: view.offset.x),
+                    view.centerYAnchor.constraint(equalTo: self.centerYAnchor, constant: view.offset.y)
+                ])
+            case .leading:
+                NSLayoutConstraint.activate([
+                    view.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: view.offset.x),
+                    view.centerYAnchor.constraint(equalTo: self.centerYAnchor, constant: view.offset.y)
+                ])
+            case .trailing:
+                NSLayoutConstraint.activate([
+                    view.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: view.offset.x),
+                    view.centerYAnchor.constraint(equalTo: self.centerYAnchor, constant: view.offset.y)
+                ])
+            case .top:
+                NSLayoutConstraint.activate([
+                    view.centerXAnchor.constraint(equalTo: self.centerXAnchor, constant: view.offset.x),
+                    view.topAnchor.constraint(equalTo: self.topAnchor, constant: view.offset.y)
+                ])
+            case .bottom:
+                NSLayoutConstraint.activate([
+                    view.centerXAnchor.constraint(equalTo: self.centerXAnchor, constant: view.offset.x),
+                    view.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant: view.offset.y)
+                ])
+            case .topLeading:
+                NSLayoutConstraint.activate([
+                    view.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: view.offset.x),
+                    view.topAnchor.constraint(equalTo: self.topAnchor, constant: view.offset.y)
+                ])
+            case .topTrailing:
+                NSLayoutConstraint.activate([
+                    view.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: view.offset.x),
+                    view.topAnchor.constraint(equalTo: self.topAnchor, constant: view.offset.y)
+                ])
+            case .bottomLeading:
+                NSLayoutConstraint.activate([
+                    view.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: view.offset.x),
+                    view.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant: view.offset.y)
+                ])
+            case .bottomTrailing:
+                NSLayoutConstraint.activate([
+                    view.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: view.offset.x),
+                    view.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant: view.offset.y)
+                ])
+            }
+        }
+    }
+}
+

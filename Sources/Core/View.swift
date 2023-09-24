@@ -39,8 +39,29 @@ public protocol StackUIView: StackUILayer {
     func overrideUserInterfaceStyle(_ overrideUserInterfaceStyle: UIUserInterfaceStyle) -> Self
     func contentHuggingPriority(_ priority: UILayoutPriority, for axis: NSLayoutConstraint.Axis) -> Self
     func contentCompressionResistancePriority(_ priority: UILayoutPriority, for axis: NSLayoutConstraint.Axis) -> Self
+    func offset(x: CGFloat, y: CGFloat) -> Self
 }
+
+extension UIView {
+    private struct AssociatedKeys {
+        static var StackUIPropertyOffset = "StackUIPropertyOffset"
+    }
+    
+    var offset: CGPoint {
+        set {
+            objc_setAssociatedObject(self, &AssociatedKeys.StackUIPropertyOffset, newValue, objc_AssociationPolicy.OBJC_ASSOCIATION_COPY_NONATOMIC)
+        }
+        get {
+            return objc_getAssociatedObject(self, &AssociatedKeys.StackUIPropertyOffset) as? CGPoint ?? .zero
+        }
+    }
+}
+
 public extension StackUIView {
+    func offset(x: CGFloat = 0, y: CGFloat = 0) -> Self {
+        self.offset = CGPoint(x: x, y: y)
+        return self
+    }
     func size(width: CGFloat? = nil, height: CGFloat? = nil) -> Self {
         translatesAutoresizingMaskIntoConstraints = false
         if let width = width {

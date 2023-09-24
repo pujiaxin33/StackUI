@@ -7,6 +7,7 @@
 
 import UIKit
 import StackUI
+import SwiftUI
 
 
 class ViewController: UITableViewController {
@@ -30,7 +31,7 @@ class ViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 10
+        return 11
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -75,6 +76,13 @@ class ViewController: UITableViewController {
                 self?.present(alert, animated: true, completion: nil)
             }
             return cell
+        case 9:
+            let cell = tableView.dequeueReusableCell(withIdentifier: "SettingsCell", for: indexPath) as! SettingsCell
+            return cell
+        case 10:
+            let cell = tableView.dequeueReusableCell(withIdentifier: "UITableViewCell", for: indexPath)
+            cell.textLabel?.text = "ZStack"
+            return cell
         default:
             let cell = tableView.dequeueReusableCell(withIdentifier: "SettingsCell", for: indexPath) as! SettingsCell
             return cell
@@ -107,6 +115,9 @@ class ViewController: UITableViewController {
             navigationController?.pushViewController(vc, animated: true)
         case 7:
             let vc = ViewBoxViewController()
+            navigationController?.pushViewController(vc, animated: true)
+        case 10:
+            let vc = ZStackViewController()
             navigationController?.pushViewController(vc, animated: true)
         default:
             break
