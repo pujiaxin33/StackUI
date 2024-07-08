@@ -23,7 +23,7 @@ class ForEachViewController: UIViewController {
             users.append(model)
         }
 
-        VStack() {
+        VStack {
             for model in users {
                 VStack {
                     HStack(alignment: .center, spacing: 5) {

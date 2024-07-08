@@ -23,7 +23,7 @@ class VScrollStackViewController: UIViewController {
             users.append(model)
         }
         
-        VScrollStack() {
+        VScrollStack {
             for model in users {
                 VStack {
                     HStack(alignment: .center, spacing: 5) {
