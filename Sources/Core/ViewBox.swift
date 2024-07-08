@@ -14,7 +14,7 @@ class ViewBox: UIView, StackUIView {
         super.init(frame: .zero)
 
         viewBuilder()
-            .embed(in: self)
+            .embed(in: self, paddings: paddings)
     }
     
     public required init?(coder: NSCoder) {

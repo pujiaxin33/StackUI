@@ -49,10 +49,14 @@ extension UIView {
     
     var offset: CGPoint {
         set {
-            objc_setAssociatedObject(self, &AssociatedKeys.StackUIPropertyOffset, newValue, objc_AssociationPolicy.OBJC_ASSOCIATION_COPY_NONATOMIC)
+            withUnsafePointer(to: AssociatedKeys.StackUIPropertyOffset) {
+                objc_setAssociatedObject(self, $0, newValue, objc_AssociationPolicy.OBJC_ASSOCIATION_COPY_NONATOMIC)
+            }
         }
         get {
-            return objc_getAssociatedObject(self, &AssociatedKeys.StackUIPropertyOffset) as? CGPoint ?? .zero
+            withUnsafePointer(to: AssociatedKeys.StackUIPropertyOffset) {
+                return objc_getAssociatedObject(self, $0) as? CGPoint ?? .zero
+            }
         }
     }
 }
