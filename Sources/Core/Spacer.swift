@@ -35,4 +35,9 @@ open class Spacer: View {
     public required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
+    
+    public func apply(_ config: (Self)->() ) -> Self {
+        config(self)
+        return self
+    }
 }

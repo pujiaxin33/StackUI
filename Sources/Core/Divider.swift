@@ -13,28 +13,43 @@ import UIKit
 /// Otherwise Divider is adjusted by UIStackView
 open class Divider: UIView, StackUIView {
     public let weight: CGFloat
+    public let length: CGFloat?
     var axis: NSLayoutConstraint.Axis? {
         didSet {
             translatesAutoresizingMaskIntoConstraints = false
             switch axis {
             case .horizontal:
                 widthAnchor.constraint(equalToConstant: weight).isActive = true
-                heightAnchor.constraint(equalTo: superview!.heightAnchor).isActive = true
+                if let length {
+                    heightAnchor.constraint(equalToConstant: length).isActive = true
+                } else {
+                    heightAnchor.constraint(equalTo: superview!.heightAnchor).isActive = true
+                }
             case .vertical:
-                widthAnchor.constraint(equalTo: superview!.widthAnchor).isActive = true
+                if let length {
+                    widthAnchor.constraint(equalToConstant: length).isActive = true
+                } else {
+                    widthAnchor.constraint(equalTo: superview!.widthAnchor).isActive = true
+                }
                 heightAnchor.constraint(equalToConstant: weight).isActive = true
             default:
                 break
             }
         }
     }
-    public init(weight: CGFloat = 1.0/UIScreen.main.scale, color: UIColor = .lightGray) {
+    public init(weight: CGFloat = 1.0/UIScreen.main.scale, length: CGFloat? = nil, color: UIColor = .lightGray) {
         self.weight = weight
+        self.length = length
         super.init(frame: .zero)
         backgroundColor = color
     }
     
     public required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
+    }
+    
+    public func apply(_ config: (Self)->() ) -> Self {
+        config(self)
+        return self
     }
 }

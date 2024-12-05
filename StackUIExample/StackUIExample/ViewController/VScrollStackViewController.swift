@@ -38,7 +38,7 @@ class VScrollStackViewController: UIViewController {
                 }.size(height: 80)
             }
         }
-        .embed(in: view)
+        .embed(in: view, ignoreSafeArea: true)
     }
 
 

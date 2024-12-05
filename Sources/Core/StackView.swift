@@ -51,6 +51,11 @@ open class HStack: UIStackView, StackUIView {
         self.alignment = alignment
         self.spacing = spacing
     }
+    
+    public func apply(_ config: (Self)->() ) -> Self {
+        config(self)
+        return self
+    }
 }
 
 open class VStack: UIStackView, StackUIView {
@@ -69,6 +74,11 @@ open class VStack: UIStackView, StackUIView {
         self.distribution = distribution
         self.alignment = alignment
         self.spacing = spacing
+    }
+    
+    public func apply(_ config: (Self)->() ) -> Self {
+        config(self)
+        return self
     }
 }
 
@@ -97,7 +107,7 @@ open class HScrollStack: UIView, StackUIView {
         stackView.spacing = spacing
         super.init(frame: .zero)
 
-        scrollView.embed(in: self)
+        scrollView.embed(in: self, ignoreSafeArea: true)
         stackView.embed(in: scrollView, ignoreSafeArea: true)
         stackView.heightAnchor.constraint(equalTo: scrollView.heightAnchor).isActive = true
     }
@@ -105,6 +115,11 @@ open class HScrollStack: UIView, StackUIView {
     @available(*, unavailable)
     public required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
+    }
+    
+    public func apply(_ config: (Self)->() ) -> Self {
+        config(self)
+        return self
     }
     
     public func applyScrollView(_ config: (UIScrollView)->() ) -> Self {
@@ -138,7 +153,7 @@ open class VScrollStack: UIView, StackUIView {
         stackView.spacing = spacing
         super.init(frame: .zero)
         
-        scrollView.embed(in: self)
+        scrollView.embed(in: self, ignoreSafeArea: true)
         stackView.embed(in: scrollView, ignoreSafeArea: true)
         stackView.widthAnchor.constraint(equalTo: scrollView.widthAnchor).isActive = true
     }
@@ -146,6 +161,11 @@ open class VScrollStack: UIView, StackUIView {
     @available(*, unavailable)
     public required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
+    }
+    
+    public func apply(_ config: (Self)->() ) -> Self {
+        config(self)
+        return self
     }
     
     public func applyScrollView(_ config: (UIScrollView)->() ) -> Self {
@@ -177,6 +197,11 @@ public class ZStack: UIView, StackUIView {
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
+    }
+    
+    public func apply(_ config: (Self)->() ) -> Self {
+        config(self)
+        return self
     }
     
     private func setupSubviews(_ views: [UIView]) {
